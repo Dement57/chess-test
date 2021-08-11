@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "allowJs": true,
+    "inlineSourceMap": true,
+    "esModuleInterop": true,
+    "types": ["node", "webdriverio/async", "@wdio/mocha-framework", "webdriverio"],
+    "module": "commonjs",
+    "target": "es6"
+  },
+  "include": [
+    "test/specs/**.js",
+    // "test/api_requests/api_flow.js",
+    // "test/api_requests/api_requeststs",
+    // "ttest/api_requests/api_vars.ts"
+  ],
+  "exclude": ["node_modules"]
+}
+
+// {
+//   "compilerOptions": {
+//     "outDir": "./build",
+//     "checkJs": true,
+//     "inlineSourceMap": true,
+//     "esModuleInterop": true,
+//     "types": ["node", "webdriverio/async", "@wdio/mocha-framework", "webdriverio"],
+//     "module": "commonjs",
+//     "target": "es6"
+//   },
+//   "include": ["test/specs/*"],
+//   "exclude": ["node_modules"]
+// }
