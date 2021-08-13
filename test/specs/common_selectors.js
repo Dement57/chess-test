@@ -1,12 +1,33 @@
+import chai from "chai";
+export {chai};
 export class CommonSel {
   email = "#username";
   password = "#password";
   loginBtn = "#login";
+
+  /**
+   * START GAME
+   */
   menuBtn = 'span[class="icon-font-chess menu"]';
-  playBtn = "span=Играть";
-  playByNet = "h2=Играть по сети";
-  playWithFriend = "h2=Играть с другом";
+  playBtn = "span=Play";
+  playByNet = "h2=Play online";
+  playWithFriend = "h2=Play a Friend";
   kolyaFriend = "a=KolyaQa";
+  timeSetDrop = 'button[class*="time-selector-button"]';
+  set30min = 'button=30 min';
+  startGameBtn = 'button[class*="custom-game-options-play-button"]';
+  gameOverModal = 'div[class="game-over-modal-content"]';
+  cookieBanner = 'div[class="bottom-banner-content"]';
+  agreeCookieBtn = 'button=I Agree'
+  notifIcon = 'a[class="toolbar-action notifications"]'
+  acceptOffer = 'div[class*="notification-item-accept"]'
+  newGameBtn = 'span=New Game'
+  playerSearchInput = 'input[class*="form-input-input"]'
+  kolyaFriendInList = 'span=KolyaQa'
+  oldGameTab = 'a[data-tab="game"]'
+  oldGameTabClose = 'span[class*="tabs-close"]'
+  oddsTooltip = 'div[class="odds-tooltip-tooltip"]'
+
 
   async waiter(browserType, sel) {
     const selector = sel;
@@ -51,11 +72,6 @@ export class CommonSel {
     selectBtn.click();
     chooseItem.click();
   }
-
-  getCity(cityName, selector) {
-    return $(`${selector}=${cityName}`);
-  }
-
   waiterCond(cond) {
     const condition = cond;
     browser.waitUntil(
@@ -71,48 +87,10 @@ export class CommonSel {
     );
   }
 
-  waiterHubDate(dateInDOM, day) {
-    browser.waitUntil(
-      () => {
-        // console.log('________________________________'+ dateInDOM.getAttribute('ng-reflect-model'),'___   ' + day, '___: ' + dateInDOM.getAttribute('ng-reflect-model').includes(day))
-        console.log(
-          "________________________________" + dateInDOM.getValue(),
-          "___   " + day,
-          "___: " + dateInDOM.getValue().includes(day)
-        );
-        // return dateInDOM.getAttribute('ng-reflect-model').includes(day)
-        return dateInDOM.getValue().includes(day);
-      },
-      {
-        timeout: 20000,
-        timeoutMsg: "NOT FOUND!!! -----WAIT CONDITION-----",
-        interval: 500,
-      }
-    );
-  }
-
   uploadFile(selector) {
     // const fileDir = path.join(__dirname, 'C:/Users/Admin/appium_js/test/stats_data')
     const filePath = path.join(global.fileDir, "/qa_image.jpg");
     selector.setValue(filePath);
-  }
-
-  waiterErrorNotExist(errorMess) {
-    const errorMessage = errorMess;
-    browser.waitUntil(
-      () => {
-        // console.log('________________________________'+ browser.getUrl(),'___' + condition)
-        return !errorMessage.isExisting();
-      },
-      {
-        timeout: 20000,
-        timeoutMsg: "NOT FOUND!!! -----WAIT CONDITION-----",
-        interval: 500,
-      }
-    );
-  }
-  newMock() {
-    return browser.mock();
   }
   waitRequest(browserType, req) {
     let request = req;
@@ -127,12 +105,6 @@ export class CommonSel {
         timeoutMsg: "EXPECTED MATCHES, BUT THERE'S NOTHING LIKE THIS",
       }
     );
-    return true;
-  }
-  waitRequest(browserType, req) {
-    let request = req;
-    if (request["matches"].length > 0 === true && request["matches"].length > 0 === true) {
-    }
     return true;
   }
 }
