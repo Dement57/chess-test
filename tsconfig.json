@@ -9,7 +9,7 @@
     "target": "es6"
   },
   "include": [
-    "test/specs/**.js",
+    "test/specs/**.js", "test/specs/vars/url_selectors.js", "test/specs/vars/user_creds.js", "test/specs/features/play_game.js", "test/specs/flows/game_with_friend.js",
     // "test/api_requests/api_flow.js",
     // "test/api_requests/api_requeststs",
     // "ttest/api_requests/api_vars.ts"

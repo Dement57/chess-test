@@ -21,7 +21,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/flow.js'
+        './test/specs/flows/game_with_friend.js'
     ],
     // Patterns to exclude.
     exclude: [

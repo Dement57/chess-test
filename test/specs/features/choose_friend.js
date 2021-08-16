@@ -60,5 +60,6 @@ export class ChooseFriend {
     await this.comS.waiter(pl2, this.comS.inviteWindow);
     chai.expect(await pl2.$(this.comS.memberAleshaLink).getText()).to.eql(this.userCreds.aleshaName)
     await pl2.$(this.comS.inviteWindow).$(this.comS.acceptGame).click();
+    await pl1.pause(2000);
   }
 }
