@@ -13,6 +13,8 @@ export class CommonSel {
   playByNet = "h2=Play online";
   playWithFriend = "h2=Play a Friend";
   kolyaFriend = "a=KolyaQa";
+  MishaFriend = "a=MishaQa";
+  VasyaFriend = "a=VasyaQa";
   timeSetDrop = 'button[class*="time-selector-button"]';
   set30min = 'button=30 min';
   startGameBtn = 'button[class*="custom-game-options-play-button"]';
@@ -24,9 +26,29 @@ export class CommonSel {
   newGameBtn = 'span=New Game'
   playerSearchInput = 'input[class*="form-input-input"]'
   kolyaFriendInList = 'span=KolyaQa'
+  mishaFriendInList = 'span=MishaQa'
   oldGameTab = 'a[data-tab="game"]'
   oldGameTabClose = 'span[class*="tabs-close"]'
   oddsTooltip = 'div[class="odds-tooltip-tooltip"]'
+  
+  /**
+   * DOWN RIGHT WINDOW SELECTORS
+   */
+  inviteWindow = 'div[class="notification-toaster-content"]'
+  memberPetyaLink = 'a[href="/member/petyaqa"]'
+  memberVasyaLink = 'a[href="/member/vasyaqa"]'
+  memberMishaLink = 'a[href="/member/mishaqa"]'
+  memberGoraLink = 'a[href="/member/goraqa"]'
+  memberAleshaLink = 'a[href="/member/aleshaqa"]'
+  acceptGame = 'a=Accept'
+  declieGame = 'a=Decline'
+
+  /**
+   * DEFINE COLOR
+   */
+   defineColorTag = 'captured-pieces';
+   timer = 'div[class*="player-clock"]';
+  
 
 
   async waiter(browserType, sel) {
@@ -49,23 +71,6 @@ export class CommonSel {
       }
     );
   }
-
-  // async waiter (sel) {
-  //   const selector = sel;
-  //   browser.waitUntil(
-  //     () => {
-  //       // console.log(JSON.stringify(selector) + 'SELECTOR HERE **************************************************')
-  //       return selector.isDisplayed()
-  //       // return selector.isDisplayed() && selector.isClickable();
-  //     },
-
-  //     {
-  //       timeout: 10000,
-  //       timeoutMsg: "NOT FOUND!!! " + JSON.stringify(selector) + " -----WAIT CONDITION-----",
-  //       interval: 500,
-  //     }
-  //   );
-  // }
 
   //SELECT DROP-DOWN
   selectBtn(selectBtn, chooseItem) {
