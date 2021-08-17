@@ -1,2 +1,2 @@
 # chess-test
-Chess website testing with WEbdriverIO
+Chess website testing with WebdriverIO
